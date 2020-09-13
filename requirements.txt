@@ -1,0 +1,7 @@
+flask
+python3.7
+FLASK_APP=main.py
+flask-wtf
+flask-sqlalchemy
+flask-migrate
+flask-login
