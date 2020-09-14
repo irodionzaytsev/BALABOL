@@ -59,8 +59,8 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user is None or user.password != form.password.data:
-            flash('Invalid username or password')
+        if user.password != form.password.data:
+            flash('Invalid password')
             return redirect(url_for('login'))
         login_user(user)
         return redirect(url_for('dialogues'))
