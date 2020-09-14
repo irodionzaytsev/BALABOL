@@ -12,6 +12,10 @@ class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Register')
+    def validate_username(self, username):
+        user = User.query.filter_by(username.data).first()
+        if user is not None:
+            raise ValidationError('This username already exists')
 
 class SearchUserForm(FlaskForm):
     username = StringField('Search user', validators=[DataRequired()])
