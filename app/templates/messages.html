@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% if messages %}
+<ol>
+{% for message in messages %}
+<li>{{ message.author }}: {{message.text}}</li>
+{% endfor %}
+</ol>
+{% else %}
+<p>There are no messages in this conversation</p>
+{% endif %}
+<form action="" method="post" novalidate>
+	{{ form.hidden_tag() }}
+	{{form.message(size=128)}}
+	{{form.submit()}}
+</form>
+{% endblock content %}

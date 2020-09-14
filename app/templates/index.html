@@ -3,10 +3,5 @@
 <h1>BALABOL</h1>
 <div>
 	<h2>Balalaika software</h2>
-	{% if current_user.is_anonymous %}
-	<a href="{{ url_for('login') }}">Login</a>
-	{% else %}
-	<a href="{{ url_for('logout') }}">Logout</a>
-	{% endif %}
 </div>
 {% endblock %}
