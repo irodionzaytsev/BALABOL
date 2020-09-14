@@ -119,6 +119,7 @@ a {
 
 .logged {
     text-align: right;
+    margin-right: 40px;
 }
 
 .first {
@@ -157,6 +158,11 @@ a {
 .first_page {
     text-align: center;
 
+}
+
+.green_square {
+    height: 50px;
+    font-color: green;
 }
 
 
