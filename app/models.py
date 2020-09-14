@@ -5,7 +5,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(32),index=True, unique=True)
     password = db.Column(db.String(32))
-    chats = db.relationship('Chat', secondary='link', backref='participants')
+    chats = db.relationship('Chat', secondary='link')
     def __repr__(self):
         return '<username: {} password: {}>'.format(self.username, self.password)
 from app import login
@@ -18,7 +18,7 @@ class Link(db.Model):
     
 class Chat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    users = db.relationship('User', secondary='link', backref='dialogues')
+    users = db.relationship('User', secondary='link')
     messages = db.relationship('Message', backref='chat')
 
 class Message(db.Model):
