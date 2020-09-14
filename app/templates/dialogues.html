@@ -1,28 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-{% if contacts %}
-<ul>
-	{% for contact in contacts %}
-	<li><a href="{{ url_for('messages') }}?chat={{ contact.chat}}">{{contact.username}}</a></li>
-	{% endfor %}
-</ul>
-{% else %}
-Your contact list is empty
-{% endif %}
-<div> 
-	<h2>Start a new chat </h2>
-	<form action="" method="post" novalidate>
-	{{ form.hidden_tag() }}
-	<p>{{ form.username.label}}</p>
-	<p>
-	{{ form.username(size=32) }} 
-	{% for error in form.username.errors %}
-	<span style="color: red;">{{ error }}</span>
-	{% endfor %}
-	</p>
-	{{ form.submit() }}
-	</form>
 
-</div>
+
+<html>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	<div class="login">
+		<h1>Chats</h1>
+		<div class="scrolling-box">
+			{% if contacts %}
+			{% for contact in contacts %}
+			<a href="{{ url_for('messages') }}?chat={{ contact.chat}}">
+				<div class="message">
+					{{contact.username}}
+				</div>
+			</a>
+			{% endfor %}
+			{% else %}
+			<p>Your contact list is empty</p>
+			{% endif %}
+		</div>
+		<div class="container">
+			<h1>Start a new chat </h1>
+			<form action="" method="post" novalidate>
+			{{ form.hidden_tag() }}
+			{{ form.username.label}} : {{ form.username(size=32, placeholder="Enter login") }}
+			{% for error in form.username.errors %}
+			<span style="color: red;">{{ error }}</span>
+			{% endfor %}
+			{{ form.submit(type="submit", class="registerbtn") }}
+			</form>
+		</div>
+	</div>
+</html>
 {% endblock %}
 

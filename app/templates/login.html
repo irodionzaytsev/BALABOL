@@ -1,17 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="" method="post" novalidate>
-	{{ form.hidden_tag() }}
-	{{ form.username.label }}: {{ form.username(size=32) }} 
-	{% for error in form.username.errors %}
-	<span style="color: red;">{{ error }}</span> 
-	{% endfor %} <br>
-	{{ form.password.label }}: {{ form.password(size=32) }} 
-	{% for error in form.password.errors %}
-	<span style="color: red;">{{ error }}</span>
-	{% endfor %} <br>
-	{{ form.submit() }}
-</form>
-<p>New user? <a href="{{ url_for('register') }}">Register</a></p>
-{% endblock %}
 
+<html>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	<form class="login" action="" method="post" novalidate>
+		<div class="container">
+			<h1>Sign in</h1>
+			<p>Please fill in this form to log in.</p>
+			{{ form.hidden_tag() }}
+			<hr />
+			{{ form.username.label }} {{ form.username(size=32, placeholder="Enter username") }}
+			{% for error in form.username.errors %}
+			<span style="color: red;">{{ error }}</span>
+			{% endfor %} <br>
+			{{ form.password.label }} {{ form.password(size=32, placeholder="Enter password") }}
+			{% for error in form.password.errors %}
+			<span style="color: red;">{{ error }}</span>
+			{% endfor %} <br>
+			{{ form.submit(type="submit", class="registerbtn") }}
+			<hr />
+			<a href="{{ url_for('register') }}"><button type="button" class="registerbtn">Register</button></a>
+		</div>
+	</form>
+</html>
+
+{% endblock %}

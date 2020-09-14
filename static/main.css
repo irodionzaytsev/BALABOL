@@ -1,0 +1,165 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+p {
+    font: bold italic 100% sans-serif;
+}
+
+label {
+    font: bold italic 100% sans-serif;
+}
+
+h1 {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/*Login*/
+.login {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 40px;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+input[type=text], input[type=password] {
+    width: 95%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin-right: 5%;
+    margin-left: 5%;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity:1;
+}
+
+a {
+    color: dodgerblue;
+}
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+/*Chats*/
+
+.message {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.logged {
+    text-align: right;
+}
+
+.first {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.second {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: right;
+}
+
+.scroll_win {
+    scroll-behavior: smooth;
+    solid-color: #282c34;
+    height: 50px;
+}
+
+.scrolling-box {
+    background-color: white;
+    display: block;
+    height: 200px;
+    padding: 1em;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.first_page {
+    text-align: center;
+
+}
+
+
+
+
+

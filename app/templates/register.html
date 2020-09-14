@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Registration</h1>
-<form action="" method="post" novalidate>
-	{{ form.hidden_tag() }}
-	{{ form.username.label }}: {{ form.username(size=32) }} 
-	{% for error in form.username.errors %}
-	<span style="color: red;">{{ error }}</span> 
-	{% endfor %} <br>
-	{{ form.password.label }}: {{ form.password(size=32) }} 
-	{% for error in form.password.errors %}
-	<span style="color: red;">{{ error }}</span>
-	{% endfor %} <br>
-	{{ form.submit() }}
-</form>
+
+<html>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	<form class="login" action="" method="post" novalidate>
+		<div class="container">
+			<h1>Registration</h1>
+			{{ form.hidden_tag() }}
+			<p>Please come up with a username and password.</p>
+			<hr/>
+			{{ form.username.label }}: {{ form.username(size=32, placeholder="Enter username") }}
+			{% for error in form.username.errors %}
+			<span style="color: red;">{{ error }}</span>
+			{% endfor %} <br>
+			{{ form.password.label }}: {{ form.password(size=32, placeholder="Enter password") }}
+			{% for error in form.password.errors %}
+			<span style="color: red;">{{ error }}</span>
+			{% endfor %} <br>
+			{{ form.submit(type="submit", class="registerbtn") }}
+		</div>
+	</form>
+</html>
 {% endblock %}
+
 

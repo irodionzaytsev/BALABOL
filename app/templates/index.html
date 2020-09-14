@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>BALABOL</h1>
-<div>
-	<h2>Balalaika software</h2>
-</div>
+<html>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	<style>
+		.fig {
+			text-align: center;
+		}
+	</style>
+	<div class="fig">
+        <div class="login">
+            <img src="../static/logo.png" align="center" />
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}"><button type="button" class="registerbtn">Login</button></a>
+            {% else %}
+            <a href="{{ url_for('logout') }}"><button type="button" class="registerbtn">Logout</button></a>
+            {% endif %}
+        </div>
+	</div>
+
+</html>
 {% endblock %}
