@@ -1,5 +1,4 @@
 flask
-python3.7
 flask-wtf
 flask-sqlalchemy
 flask-migrate
